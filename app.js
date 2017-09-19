@@ -36,7 +36,15 @@ module.exports = {
     new SpikeDatoCMS({
       addDataTo: locals,
       token: '2e9b95b0328903c6d9acdf25665510',
-      models: []
+      models: [
+        {
+          name: 'class_level',
+          template: {
+            path: 'views/classLevel.sgr',
+            output: classLevel => `classes/${classLevel.slug}/index.html`
+          }
+        }
+      ]
     })
   ]
 }
