@@ -1,4 +1,5 @@
 extends(src='layout.sgr')
   block(name='content')
     h1 {{ item.className }}
+    p {{ item.classDescription }}
     pre {{ JSON.stringify(item, null, 2) }}
