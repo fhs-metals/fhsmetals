@@ -2,4 +2,14 @@ extends(src='layout.sgr')
   block(name='content')
     h1 {{ item.className }}
     p {{ item.classDescription }}
+
+    h2 Skills
+    ul
+      each(loop="skill in item.skills")
+        li {{ skill.title }}
+
+    h2 Projects
+    ul
+      each(loop="project in item.projects")
+        li {{ project.title }}
     pre {{ JSON.stringify(item, null, 2) }}

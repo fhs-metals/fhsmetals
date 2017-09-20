@@ -16,8 +16,10 @@ html
     header.g-header
       nav
         ul
+
           li
             a(href="/classes") Classes
+
           li
             a(href="/about") Instructor
 
