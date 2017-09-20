@@ -13,8 +13,5 @@ html
     link(rel='stylesheet' href='css/index.css')
 
   body
-    main(role='main' id='{{ pageId }}')
+    main(role='main' id='p-{{ pageId }}')
       block(name='content')
-
-    block(name='javascript')
-      script(src='js/main.js' defer)
