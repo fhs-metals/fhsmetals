@@ -12,4 +12,5 @@ extends(src='layout.sgr')
     ul
       each(loop="project in item.projects")
         li {{ project.title }}
-    pre {{ JSON.stringify(item, null, 2) }}
+        //if(condition="project.image")
+        //  img(src="{{ 'https://' + dato._meta.imgixHost + project.image.path }}"
