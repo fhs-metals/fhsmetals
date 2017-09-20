@@ -13,9 +13,10 @@ const locals = {}
 module.exports = {
   devtool: 'source-map',
   matchers: { html: '*(**/)*.sgr', css: '*(**/)*.sss' },
+  vendor: ['_redirects'],
   ignore: [
     '**/layout.sgr',
-    '**/_*',
+    '**/*/_*',
     '**/.*',
     'readme.md',
     'yarn.lock',
