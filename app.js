@@ -40,7 +40,7 @@ module.exports = {
         {
           name: 'class_level',
           template: {
-            path: 'views/classLevel.sgr',
+            path: 'views/class-level.sgr',
             output: classLevel => `classes/${classLevel.slug}/index.html`
           }
         }
