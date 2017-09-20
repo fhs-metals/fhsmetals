@@ -47,25 +47,14 @@
     "format": "prettier --write '**/*.js' '**/*.json'"
   },
   "lint-staged": {
-    "**/*.js": [
-      "npm run format",
-      "git add"
-    ]
+    "**/*.js": ["npm run format", "git add"]
   },
   "eslintConfig": {
-    "extends": [
-      "standard",
-      "prettier"
-    ],
+    "extends": ["standard", "prettier"],
     "plugins": [],
     "env": {}
   },
-  "eslintIgnore": [
-    "node_modules",
-    "coverage",
-    "dist",
-    "public"
-  ],
+  "eslintIgnore": ["node_modules", "coverage", "dist", "public"],
   "prettier": {
     "semi": false,
     "singleQuote": true

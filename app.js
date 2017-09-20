@@ -13,26 +13,33 @@ const locals = {}
 module.exports = {
   devtool: 'source-map',
   matchers: { html: '*(**/)*.sgr', css: '*(**/)*.sss' },
-  ignore: ['**/layout.sgr', '**/_*', '**/.*', 'readme.md', 'yarn.lock', '.c9/**/*'],
-  
+  ignore: [
+    '**/layout.sgr',
+    '**/_*',
+    '**/.*',
+    'readme.md',
+    'yarn.lock',
+    '.c9/**/*'
+  ],
+
   reshape: htmlStandards({
     parser: sugarml,
-    locals: (ctx) => {
+    locals: ctx => {
       locals.pageId = pageId(ctx)
       return locals
     },
     minify: env === 'production'
   }),
-  
+
   postcss: cssStandards({
     parser: sugarss,
     minify: env === 'production',
     warnForDuplicates: env !== 'production'
   }),
-  
+
   babel: jsStandards(),
-  
-    plugins: [
+
+  plugins: [
     new SpikeDatoCMS({
       addDataTo: locals,
       token: '2e9b95b0328903c6d9acdf25665510',
