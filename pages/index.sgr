@@ -1,7 +1,7 @@
-extends(src='../layout.sgr')
-  block(name='content')
+extends(src="../layout.sgr")
+  block(name="content")
     h1 FHS Metals
     each(loop="level in dato.class_level")
       h2
-        a(href="/classes/{{level.slug}}") {{ level.className }}
+        a(href="/classes/{{ level.slug }}") {{ level.className }}
     pre dato: {{ JSON.stringify(dato, null, 2) }}

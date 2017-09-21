@@ -1,3 +1,5 @@
-extends(src='../layout.sgr')
-  block(name='content')
-    h1 Hi
+extends(src="../layout.sgr")
+  block(name="content")
+    each(loop="level in dato.class_level")
+      a.g-class-card(href="/classes/{{ level.slug }}")
+        h2 {{ level.className }}
