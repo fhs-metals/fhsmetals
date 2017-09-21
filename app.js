@@ -33,7 +33,7 @@ module.exports = {
       locals.pageId = pageId(ctx)
       return locals
     },
-    minify: env === 'production'
+    minify: true
   }),
 
   postcss: cssStandards({

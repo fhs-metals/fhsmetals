@@ -1,7 +1,11 @@
 extends(src='../layout.sgr')
   block(name='content')
-    h1 {{ item.className }}
-    p {{ item.classDescription }}
+    .g-class-header
+      if(condition="item.backgroundImage")
+        img(src="https://{{ dato._meta.imgixHost + item.backgroundImage.path }}?auto=compress,format&fit=crop&w=1000&h=500")
+      h1 {{ item.className }}
+
+    p.g-class-description {{ item.classDescription }}
 
     h2 Skills
     ul

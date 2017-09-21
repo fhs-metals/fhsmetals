@@ -27,7 +27,6 @@
     "eslint-plugin-node": "^5.1.1",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
-    "husky": "^0.14.3",
     "lint-staged": "^4.2.1",
     "prettier": "^1.7.0"
   },
@@ -37,7 +36,6 @@
   "repository": "https://github.com/fhs-metals/fhs-metals",
   "scripts": {
     "lint": "npm run -s format && npm run -s eslint",
-    "precommit": "lint-staged",
     "pretest": "npm run lint",
     "test": "NODE_ENV=test ava",
     "start": "spike watch",
@@ -47,14 +45,25 @@
     "format": "prettier --write '**/*.js' '**/*.json'"
   },
   "lint-staged": {
-    "**/*.js": ["npm run format", "git add"]
+    "**/*.js": [
+      "npm run format",
+      "git add"
+    ]
   },
   "eslintConfig": {
-    "extends": ["standard", "prettier"],
+    "extends": [
+      "standard",
+      "prettier"
+    ],
     "plugins": [],
     "env": {}
   },
-  "eslintIgnore": ["node_modules", "coverage", "dist", "public"],
+  "eslintIgnore": [
+    "node_modules",
+    "coverage",
+    "dist",
+    "public"
+  ],
   "prettier": {
     "semi": false,
     "singleQuote": true
