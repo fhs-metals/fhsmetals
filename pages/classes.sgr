@@ -3,3 +3,5 @@ extends(src="../layout.sgr")
     each(loop="level in dato.class_level")
       a.g-class-card(href="/classes/{{ level.slug }}")
         h2 {{ level.className }}
+        if(condition="level.backgroundImage")
+          img(height="200" width="400" src="https://{{ dato._meta.imgixHost + level.backgroundImage.path }}?auto=compress,format&fit=crop&h=200&w=400")
