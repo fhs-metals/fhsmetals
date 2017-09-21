@@ -12,7 +12,7 @@ const locals = {}
 
 module.exports = {
   devtool: 'source-map',
-  entry: { 'index.js': './index.js' },
+  entry: { index: './index.js' },
   matchers: { html: '*(**/)*.sgr', css: '*(**/)*.sss' },
   vendor: ['_redirects'],
   ignore: [
