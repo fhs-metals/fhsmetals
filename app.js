@@ -12,6 +12,7 @@ const locals = {}
 
 module.exports = {
   devtool: 'source-map',
+  entry: { 'index.js': './index.js' },
   matchers: { html: '*(**/)*.sgr', css: '*(**/)*.sss' },
   vendor: ['_redirects'],
   ignore: [
@@ -22,6 +23,8 @@ module.exports = {
     'yarn.lock',
     '.c9/**/*'
   ],
+
+  dumpDirs: ['pages', 'components'],
 
   reshape: htmlStandards({
     parser: sugarml,
@@ -48,7 +51,7 @@ module.exports = {
         {
           name: 'class_level',
           template: {
-            path: 'views/class-level.sgr',
+            path: 'pages/class-level.sgr',
             output: classLevel => `classes/${classLevel.slug}/index.html`
           }
         }
