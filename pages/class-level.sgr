@@ -1,20 +1,25 @@
-extends(src='../layout.sgr')
-  block(name='content')
+extends(src="../layout.sgr")
+  block(name="content")
     .g-class-header
       if(condition="item.backgroundImage")
-        img(src="https://{{ dato._meta.imgixHost + item.backgroundImage.path }}?auto=compress,format&fit=crop&w=1000&h=500")
+        img(src="https://{{ dato._meta.imgixHost + item.backgroundImage.path }}?auto=compress,format&fit=crop&w=1000&h=500" width="1000" height="500")
       h1 {{ item.className }}
 
     p.g-class-description {{ item.classDescription }}
 
-    h2 Skills
-    ul
+    h2.g-heading Skills
+    ul.g-skill-list
       each(loop="skill in item.skills")
-        li {{ skill.title }}
+        li.g-skill-card
+          if(condition="skill.image")
+            img(height="300" width="300" src="https://{{ dato._meta.imgixHost + skill.image.path }}?auto=compress,format&fit=crop&h=800&w=800")
+          div
+            h3 {{ skill.title }}
+            p {{ skill.description }}
 
-    h2 Projects
+    h2.g-heading Projects
     ul
       each(loop="project in item.projects")
         li {{ project.title }}
         //if(condition="project.image")
-        //  img(src="{{ 'https://' + dato._meta.imgixHost + project.image.path }}"
+        //  img(src="{{ "https://" + dato._meta.imgixHost + project.image.path }}"
