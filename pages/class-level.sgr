@@ -8,18 +8,19 @@ extends(src="../layout.sgr")
     p.g-class-description {{ item.classDescription }}
 
     h2.g-heading Skills
-    ul.g-skill-list
+    ul.g-unstyled-list
       each(loop="skill in item.skills")
         li.g-skill-card
           if(condition="skill.image")
-            img(height="300" width="300" src="https://{{ dato._meta.imgixHost + skill.image.path }}?auto=compress,format&fit=crop&h=800&w=800")
+            img(height="300" width="300" src="https://{{ dato._meta.imgixHost + skill.image.path }}?auto=compress,format&fit=crop&h=300&w=300")
           div
             h3 {{ skill.title }}
             p {{ skill.description }}
 
     h2.g-heading Projects
-    ul
+    ul.g-project-list
       each(loop="project in item.projects")
-        li {{ project.title }}
-        //if(condition="project.image")
-        //  img(src="{{ "https://" + dato._meta.imgixHost + project.image.path }}"
+        li.g-project-card
+          if(condition="project.image")
+           img(src="https://{{ dato._meta.imgixHost + project.image.path }}?auto=compress,format&fit=crop&h=250&w=250")
+          h3 {{ project.title }}
