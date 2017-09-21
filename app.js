@@ -16,12 +16,13 @@ module.exports = {
   matchers: { html: '*(**/)*.sgr', css: '*(**/)*.sss' },
   vendor: ['_redirects'],
   ignore: [
-    '**/layout.sgr',
-    '**/*/_*',
+    'layout.sgr',
+    'css/*',
     '**/.*',
     'readme.md',
     'yarn.lock',
-    '.c9/**/*'
+    '.c9/**/*',
+    'components/*.sss'
   ],
 
   dumpDirs: ['pages', 'components'],
