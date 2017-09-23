@@ -5,10 +5,22 @@
   max-width: 800px
   display: flex
 
+  @media screen and (width <= 800px)
+    flex-direction: column
+    align-items: center
+    max-width: 500px
+
+    & .text
+      width: 100%
+
+  @media screen and (width >= 800px)
+
+    & .text
+      margin-left: 30px
+
+      & p:nth-of-type(1)
+        margin-top: 0
+
   & .text
-    margin-left: 30px
     flex-grow: 1
     text-align: justify
-
-  & p:nth-of-type(1)
-    margin-top: 0
