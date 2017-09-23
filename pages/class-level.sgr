@@ -22,5 +22,24 @@ extends(src="../layout.sgr")
       each(loop="project in item.projects")
         li.g-project-card
           if(condition="project.image")
-           img(src="https://{{ dato._meta.imgixHost + project.image.path }}?auto=compress,format&fit=crop&h=250&w=250")
+           img(src="https://{{ dato._meta.imgixHost + project.image.path }}?auto=compress,format&fit=crop&h=200&w=250")
           h3 {{ project.title }}
+      li.g-project-card
+        img(src="https://www.datocms-assets.com/3375/1505964265-dustpan.jpg?auto=compress,format&amp;fit=crop&amp;h=200&amp;w=250")
+        h3 Sheet Metal Dustpan
+
+      li.g-project-card
+        img(src="https://www.datocms-assets.com/3375/1505964265-dustpan.jpg?auto=compress,format&amp;fit=crop&amp;h=200&amp;w=250")
+        h3 Sheet Metal Dustpan
+
+      li.g-project-card
+        img(src="https://www.datocms-assets.com/3375/1505964265-dustpan.jpg?auto=compress,format&amp;fit=crop&amp;h=200&amp;w=250")
+        h3 Sheet Metal Dustpan
+
+      li.g-project-card
+        img(src="https://www.datocms-assets.com/3375/1505964265-dustpan.jpg?auto=compress,format&amp;fit=crop&amp;h=200&amp;w=250")
+        h3 Sheet Metal Dustpan
+
+      li.g-project-card
+        img(src="https://www.datocms-assets.com/3375/1505964265-dustpan.jpg?auto=compress,format&amp;fit=crop&amp;h=200&amp;w=250")
+        h3 Sheet Metal Dustpan
