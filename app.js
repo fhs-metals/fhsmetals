@@ -20,7 +20,7 @@ const render = prop => s => {
 module.exports = {
   devtool: 'source-map',
   entry: { index: './index.js' },
-  matchers: { html: '*(**/)*.sgr', css: '*(**/)*.sss' },
+  matchers: { html: '*(**/)*.sgr', css: 'index.sss' },
   vendor: ['_redirects'],
   ignore: [
     'layout.sgr',
@@ -80,6 +80,13 @@ module.exports = {
           transform: t => {
             t.bio = md.render(t.bio)
             return t
+          }
+        },
+        {
+          name: 'home',
+          transform: h => {
+            h.description = md.render(h.description)
+            return h
           }
         }
       ]

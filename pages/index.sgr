@@ -1,7 +1,6 @@
 extends(src="../layout.sgr")
   block(name="content")
-    h1 FHS Metals
-    each(loop="level in dato.class_level")
-      h2
-        a(href="/classes/{{ level.slug }}") {{ level.className }}
-    pre dato: {{ JSON.stringify(dato, null, 2) }}
+    .g-full-hero(style="background-image: url(https://{{ dato._meta.imgixHost + dato.home[0].backgroundImage.path }}?auto=format,compress&bri=-30)")
+      h1 {{ dato.home[0].name }}
+      .text {{ dato.home[0].description }}
+      a.g-button(href="/classes") {{ dato.home[0].buttonTitle }}
