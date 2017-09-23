@@ -20,7 +20,7 @@ html
             a(href="/classes") Classes
 
           li
-            a(href="/about") Instructor
+            a(href="/about") About
 
     main(role="main" id="p-{{ pageId }}")
       block(name="content")

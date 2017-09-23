@@ -8,6 +8,7 @@
   },
   "bugs": "https://github.com/fhs-metals/fhs-metals/issues",
   "dependencies": {
+    "markdown-it": "^8.4.0",
     "reshape-standard": "^3.0.0",
     "spike": "^2.0.0",
     "spike-css-standards": "^3.0.0",

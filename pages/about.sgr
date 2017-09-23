@@ -1,0 +1,19 @@
+extends(src="../layout.sgr")
+  block(name="content")
+    h1 About
+
+    h2.g-heading {{ dato.teacher[0].name }}
+    section.g-text-with-image
+      if(condition="dato.teacher[0].photo")
+        img(src="https://{{ dato._meta.imgixHost + dato.teacher[0].photo.path }}?auto=compress,format&fit=crop&w=350&h=500" width="350" height="500")
+        .text
+          | {{ dato.teacher[0].bio }}
+          a.g-button(href="mailto:{{ dato.teacher[0].email }}") Contact Me
+
+    h2.g-heading {{ dato.school[0].name }}
+    section.g-text-with-image
+      if(condition="dato.school[0].photo")
+        img(src="https://{{ dato._meta.imgixHost + dato.school[0].photo.path }}?auto=compress,format&fit=crop&w=350&h=350" width="350" height="350")
+      .text
+        | {{ dato.school[0].description }}
+        a.g-button(href="{{ dato.school[0].link }}") Find out more

@@ -5,7 +5,7 @@ extends(src="../layout.sgr")
         img(src="https://{{ dato._meta.imgixHost + item.backgroundImage.path }}?auto=compress,format&fit=crop&w=1000&h=500" width="1000" height="500")
       h1 {{ item.className }}
 
-    p.g-class-description {{ item.classDescription }}
+    .g-class-description {{ item.classDescription }}
 
     h2.g-heading Skills
     ul.g-unstyled-list

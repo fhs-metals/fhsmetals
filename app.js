@@ -6,9 +6,16 @@ const sugarml = require('sugarml')
 const sugarss = require('sugarss')
 const SpikeDatoCMS = require('spike-datocms')
 
+const md = require('markdown-it')()
+
 const env = process.env.SPIKE_ENV
 
 const locals = {}
+
+const render = prop => s => {
+  s[prop] = md.render(s[prop])
+  return s
+}
 
 module.exports = {
   devtool: 'source-map',
@@ -51,9 +58,28 @@ module.exports = {
       models: [
         {
           name: 'class_level',
+          transform: c => {
+            c.skills = c.skills.map(render('description'))
+            c.classDescription = md.render(c.classDescription)
+            return c
+          },
           template: {
             path: 'pages/class-level.sgr',
             output: classLevel => `classes/${classLevel.slug}/index.html`
+          }
+        },
+        {
+          name: 'school',
+          transform: s => {
+            s.description = md.render(s.description)
+            return s
+          }
+        },
+        {
+          name: 'teacher',
+          transform: t => {
+            t.bio = md.render(t.bio)
+            return t
           }
         }
       ]
