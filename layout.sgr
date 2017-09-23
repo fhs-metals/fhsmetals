@@ -17,6 +17,9 @@ html
       nav
         ul
           li
+            a(href="/") Home
+
+          li
             a(href="/classes") Classes
 
           li
